@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class playermovement : MonoBehaviour
 {
+
     private Rigidbody2D rb;
 
     private float Move;
