@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class health : MonoBehaviour
+public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
-    private float currentHealth;
+    public float CurrentHealth { get; private set; }
 
     private void Awake()
     {
-        currentHealth = startingHealth;
+        CurrentHealth = startingHealth;
 
     }
 
     public void TakeDamage(float _damage)
     {
-        currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
-         if (currentHealth > 0)
+        CurrentHealth = Mathf.Clamp(CurrentHealth - _damage, 0, startingHealth);
+         if (CurrentHealth > 0)
         {
             //player hurt
         }
@@ -27,15 +27,9 @@ public class health : MonoBehaviour
     }
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+            TakeDamage(1);
     }
 }
