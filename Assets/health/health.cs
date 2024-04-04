@@ -6,10 +6,13 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     public float CurrentHealth { get; private set; }
+    private Animator anim;
+    private bool dead;
 
     private void Awake()
     {
         CurrentHealth = startingHealth;
+        anim = GetComponent<Animator>();
 
     }
 
@@ -18,11 +21,18 @@ public class Health : MonoBehaviour
         CurrentHealth = Mathf.Clamp(CurrentHealth - _damage, 0, startingHealth);
          if (CurrentHealth > 0)
         {
-            //player hurt
+            anim.SetTrigger("hurt");
+            //iframes
         }
          else
         {
-            //player dead
+            if (!dead)
+            {
+                anim.SetTrigger("die");
+                GetComponent<playermovement>().enabled = false;
+                dead = true;
+            }
+            
         }
     }
 
