@@ -35,11 +35,14 @@ public class Health : MonoBehaviour
             
         }
     }
-
-
-    private void Update()
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if(Input.GetKeyDown(KeyCode.E))
-            TakeDamage(1);
+        if (other.gameObject.CompareTag("water"))
+        {
+            CurrentHealth = 0;
+            anim.SetTrigger("die");
+            GetComponent<playermovement>().enabled = false;
+            dead = true;
+        }
     }
 }
