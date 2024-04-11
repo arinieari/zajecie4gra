@@ -43,3 +43,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: sky
+    uniqueID: 586869089
+    locked: 0
+  - name: cave
+    uniqueID: 3997400863
+    locked: 0
+  - name: ground
+    uniqueID: 2657945535
+    locked: 0
+  - name: danger
+    uniqueID: 1872345801
+    locked: 0
+  - name: default
+    uniqueID: 3424268833
+    locked: 0
+  - name: gracz
+    uniqueID: 1070956673
+    locked: 0
