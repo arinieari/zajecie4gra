@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - water
+  - dark
   layers:
   - Default
   - TransparentFX
